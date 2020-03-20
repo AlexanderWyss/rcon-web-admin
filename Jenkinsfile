@@ -16,6 +16,6 @@ node {
     stage('Deploy') {
         sh 'docker pull alexanderwyss/rcon:latest'
         sh 'docker stop rcon || true && docker rm -f rcon || true'
-        sh 'docker run -d --expose 80 --expose 443 --restart unless-stopped --name rcon -v /docker/rcon/db:/opt/rcon-web-admin/db -e VIRTUAL_HOST=rcon.wyss.tech -e VIRTUAL_PORT=443 -e LETSENCRYPT_HOST=rcon.wyss.tech alexanderwyss/rcon:latest'
+        sh 'docker run -d --expose 80 --restart unless-stopped --name rcon -v /docker/rcon/db:/opt/rcon-web-admin/db -e VIRTUAL_HOST=rcon.wyss.tech -e VIRTUAL_PORT=80 -e LETSENCRYPT_HOST=rcon.wyss.tech alexanderwyss/rcon:latest'
     }
 }
