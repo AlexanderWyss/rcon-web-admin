@@ -13,7 +13,7 @@ var config = {
      * The full wss:// url to the websocket
      * Null if default, only required to change when you proxy your application
      */
-    "websocketUrlSsl": null,
+    "websocketUrlSsl": "wss://rcon.wyss.tech",
 
     /**
      * The full ws://

@@ -8,6 +8,7 @@ var path = require('path');
 var app = express();
 var config = require(__dirname + "/config");
 
+require(__dirname + "/websocketmgr")(app);
 app.get("/", function (req, res) {
     res.sendFile(path.resolve(__dirname + "/../public/index.html"));
 });
@@ -21,4 +22,3 @@ app.use(express.static(__dirname + "/../public"));
 
 app.listen(config.port);
 
-require(__dirname + "/websocketmgr")(app);
