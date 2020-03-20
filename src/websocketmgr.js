@@ -21,7 +21,7 @@ WebSocketMgr.server = null;
 WebSocketMgr.startServer = function () {
     try {
         if (WebSocketMgr.server === null) {
-            WebSocketMgr.server = new WebSocketServer({port: config.port});
+            WebSocketMgr.server = new WebSocketServer({port: config.port + 1});
             WebSocketMgr.server.on('connection', function connection(ws) {
                 var user = new WebSocketUser(ws);
                 ws.on('message', function incoming(message) {
