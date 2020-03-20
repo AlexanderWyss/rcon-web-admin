@@ -14,7 +14,7 @@ app.get("/", function (req, res) {
 
 // output the required ws port number
 app.get("/wsconfig", function (req, res) {
-    res.send(JSON.stringify({port : config.port + 1, sslUrl : config.websocketUrlSsl, url : config.websocketUrl}));
+    res.send(JSON.stringify({port : config.port, sslUrl : config.websocketUrlSsl, url : config.websocketUrl}));
 });
 
 app.use(express.static(__dirname + "/../public"));
