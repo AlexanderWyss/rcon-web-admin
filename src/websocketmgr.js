@@ -18,7 +18,7 @@ WebSocketMgr.server = null;
 /**
  * Start the websocket server
  */
-module.exports = function(app) {
+module.export = function(app) {
     try {
         if (WebSocketMgr.server === null) {
             WebSocketMgr.server = new WebSocketServer({server: app});
