@@ -23,4 +23,4 @@ app.listen(config.port, config.host, function () {
 
 });
 
-require(__dirname + "/websocketmgr")(app);
+require(__dirname + "/websocketmgr").startServer(app);
