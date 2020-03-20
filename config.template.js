@@ -13,7 +13,7 @@ var config = {
      * The full wss:// url to the websocket
      * Null if default, only required to change when you proxy your application
      */
-    "websocketUrlSsl": "wss://rcon.wyss.tech:80",
+    "websocketUrlSsl": "wss://rcon.wyss.tech:443",
 
     /**
      * The full ws://
@@ -27,7 +27,7 @@ var config = {
      * The given number + 1 is the websocket port
      * Notice that both given number and the number+1 will be required
      */
-    "port": 443
+    "port": 80
 };
 
 module.exports = config;

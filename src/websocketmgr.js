@@ -21,7 +21,7 @@ WebSocketMgr.server = null;
 WebSocketMgr.startServer = function () {
     try {
         if (WebSocketMgr.server === null) {
-            WebSocketMgr.server = new WebSocketServer({port: 80});
+            WebSocketMgr.server = new WebSocketServer({port: 443});
             WebSocketMgr.server.on('connection', function connection(ws) {
                 var user = new WebSocketUser(ws);
                 ws.on('message', function incoming(message) {
