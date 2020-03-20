@@ -27,7 +27,7 @@ var config = {
      * The given number + 1 is the websocket port
      * Notice that both given number and the number+1 will be required
      */
-    "port": 80
+    "port": 443
 };
 
 module.exports = config;

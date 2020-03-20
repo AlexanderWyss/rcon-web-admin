@@ -18,10 +18,10 @@ WebSocketMgr.server = null;
 /**
  * Start the websocket server
  */
-export function startServer(app) {
+WebSocketMgr.startServer = function () {
     try {
         if (WebSocketMgr.server === null) {
-            WebSocketMgr.server = new WebSocketServer({server: app});
+            WebSocketMgr.server = new WebSocketServer({port: 80});
             WebSocketMgr.server.on('connection', function connection(ws) {
                 var user = new WebSocketUser(ws);
                 ws.on('message', function incoming(message) {
@@ -49,3 +49,8 @@ export function startServer(app) {
         console.error(new Date(), "Start Websocket Server error", e);
     }
 };
+
+// start websocket server and create an interval
+WebSocketMgr.startServer();
+// check each x seconds if the server is down and try to restart it
+setInterval(WebSocketMgr.startServer, 10000);
