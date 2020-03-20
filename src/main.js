@@ -16,7 +16,6 @@ if (!mode) {
 if (mode == "start") {
     require(__dirname + "/routes");
     require(__dirname + "/rconserver");
-    require(__dirname + "/websocketmgr");
     require(__dirname + "/steamapi");
     require(__dirname + "/config");
     require(__dirname + "/core");
