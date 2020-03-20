@@ -19,8 +19,6 @@ app.get("/wsconfig", function (req, res) {
 
 app.use(express.static(__dirname + "/../public"));
 
-app.listen(config.port, config.host, function () {
-
-});
+app.listen(config.port);
 
 require(__dirname + "/websocketmgr")(app);
