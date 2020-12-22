@@ -1,10 +1,9 @@
 node {
-    def dockerImage
     stage('Clone repository') {
         checkout scm
     }
     stage('Build image') {
-        dockerImage = docker.build("alexanderwyss/rcon")
+        docker.build("alexanderwyss/rcon")
     }
     stage('Deploy') {
         sh 'docker stop rcon || true && docker rm -f rcon || true'
